@@ -37,7 +37,6 @@ app.get("/update", (request, responseServer) => {
           .then((json) => {
             let currencyConversion =
               +element.properties.amount * +json.rates.USD;
-
             ////////////////////////////making patch request to change data of hubspot deals//////////
             fetch(`https://api.hubapi.com/crm/v3/objects/deals/${element.id}`, {
               method: "PATCH",
